@@ -1,0 +1,44 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>polling-rate-estimator demo</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; }
+  #area { height: 220px; border: 2px dashed #888; border-radius: 8px;
+          display: flex; align-items: center; justify-content: center;
+          color: #666; user-select: none; touch-action: none; }
+  #msg { font-size: 1.25rem; margin: 1rem 0 .25rem; min-height: 1.5em; }
+  #diag { color: #666; font-size: .85rem; white-space: pre-wrap; }
+  button { margin-top: .5rem; }
+</style>
+<h1>polling-rate-estimator</h1>
+<p>Move the mouse continuously inside the box. The number appears only when
+the capture supports one; otherwise you get the reason it doesn't.</p>
+<div id="area">move here</div>
+<p id="msg"></p>
+<pre id="diag"></pre>
+<button id="reset">reset</button>
+<script type="module">
+  import { onRawMoves, supportsCoalesced } from "../src/capture.js";
+  import { analyze, pollingReport } from "../src/index.js";
+  const area = document.getElementById("area");
+  const msg = document.getElementById("msg");
+  const diag = document.getElementById("diag");
+  let stamps = [];
+  if (!supportsCoalesced()) {
+    msg.textContent = "This browser does not expose coalesced pointer events — "
+      + "delivered-event timing would measure the display, so the demo declines to run.";
+  } else {
+    onRawMoves(area, (batch) => {
+      for (const s of batch) stamps.push(s.t);
+      if (stamps.length % 25) return;                 // update ~every 25 samples
+      const rep = pollingReport(analyze(stamps));
+      msg.textContent = rep.message;
+      diag.textContent = rep.diagnostics
+        ? JSON.stringify(rep.diagnostics, (k, v) =>
+            typeof v === "number" ? Math.round(v * 1000) / 1000 : v, 1)
+        : "";
+    });
+  }
+  document.getElementById("reset").onclick = () => { stamps = []; msg.textContent = ""; diag.textContent = ""; };
+</script>

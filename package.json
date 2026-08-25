@@ -1,0 +1,32 @@
+{
+  "name": "polling-rate-estimator",
+  "version": "0.1.0",
+  "description": "Estimate mouse/keyboard polling rate from event timestamps \u2014 refuses to guess. Powers inputprobe.com",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/run_node.mjs"
+  },
+  "keywords": [
+    "polling-rate",
+    "mouse",
+    "keyboard",
+    "input-devices",
+    "usb-hid",
+    "measurement",
+    "getCoalescedEvents",
+    "pointer-events"
+  ],
+  "homepage": "https://inputprobe.com/polling-rate-test/",
+  "author": "Andrew Williams",
+  "license": "MIT"
+}

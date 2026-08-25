@@ -1,0 +1,16 @@
+{
+ "src/polling.js": "5b937e1025ad36c90c4b5c4e4028a47e94a600f711d8a92548d71f7dba730906",
+ "src/stats.js": "3903acb97d4eccc828c6507df9e972d7b17d9fec332bc948d385bf73d9d9e938",
+ "src/report.js": "18c6ff2f4118978eeff1ffc061d83d835bd6fe3ccdd9c5ea4bee86fb69687443",
+ "src/capture.js": "bce7a1b5a814dc408aa03570fd51ba9943a06b6724b7892945871305426ac08c",
+ "src/index.js": "67040f4dbb17c3d9ab6a87509a9fdb962fc52ec9ef159c866ca80628ef6eb76b",
+ "test/streams.mjs": "cd94a0176d69edcc5392f92cdb94dcb0728f1e501218f93d1f56a157d7e54d11",
+ "test/cases.mjs": "3c747607eab55eb85bbc1439f43d3c839e2969f10d2e7fd71e82472455d5e32d",
+ "test/run_node.mjs": "1f04e9099ec161992c7835ac6cecab43725c78d9c2f9d24477503ba5a9402133",
+ "demo/index.html": "3e4f5c8374571f7a97080ff1f8eb2bd1956ca71b3f2d19ce708cbd77f9abf249",
+ "docs/VALIDATION.md": "ada7c0ee3ee5bafb9113547ffe06c5a641c5bd23f39b0169759cce6743146a72",
+ "README.md": "ecd5c430ed367de4dd0858d8ce8f1ae739fb27a4097a04a22a94812a9bebc7a3",
+ "LICENSE": "5cf753f23fe8c846d46500e788d8b9fc0c97f712a6128115445887dce4e6ecdf",
+ ".gitignore": "6c7d15d2ab1a0b51ebcae7e88b9ad01f0713d0833bc2dbe8f3bcc7a81b66b344",
+ "package.json": "3696c7ab98c37f9170ef1ca4541c43fe226c6dfcc1e8fae81612d85723947189"
+}

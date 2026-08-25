@@ -7,6 +7,8 @@ This is the measurement engine behind
 [inputprobe.com/polling-rate-test](https://inputprobe.com/polling-rate-test/),
 published so the method can be checked rather than believed.
 
+![Live demo: continuous movement produces a rate; a hesitant capture is refused with the reason stated](demo/demo.gif)
+
 ## Why most browser testers are wrong
 
 A browser draws the page at your display's refresh rate and delivers mouse
